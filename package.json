@@ -1,13 +1,21 @@
 {
   "name": "getxgenerator",
   "displayName": "GetX Generator",
-  "description": "This is the README for your extension \"getxgenerator\". After writing up a brief description, we recommend including the following sections.",
+  "description": "Quickly generate a GetX Binding, Controller, and View file structure for Flutter development.",
   "version": "0.0.1",
+  "publisher": "Manish Relani",
   "engines": {
     "vscode": "^1.99.0"
   },
   "categories": [
-    "Other"
+    "Snippets",
+    "Programming Languages"
+  ],
+  "keywords": [
+    "dart",
+    "flutter",
+    "getX",
+    "state-management"
   ],
   "activationEvents": [],
   "main": "./out/extension.js",
