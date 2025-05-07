@@ -18,13 +18,23 @@
     "getX",
     "state-management"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onLanguage:dart"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "extension.genereteBCV",
         "title": "Getx: Create a Binding-Controller-View"
+      },
+      {
+        "command": "extension.wrap-obx-builder",
+        "title": "Wrap with ObxBuilder"
+      },
+      {
+        "command": "extension.wrap-obx",
+        "title": "Wrap with Obx"
       }
     ],
     "menus": {
@@ -33,6 +43,16 @@
           "command": "extension.genereteBCV",
           "group": "GetGroup@1",
           "when": "explorerResourceIsFolder"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "extension.wrap-obx-builder",
+          "when": "editorLangId == dart"
+        },
+        {
+          "command": "extension.wrap-obx",
+          "when": "editorLangId == dart"
         }
       ]
     }
@@ -301,5 +321,13 @@
     "zod-to-json-schema": "^3.24.5"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manishrelani/getx-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/manishrelani/getx-generator/issues"
+  },
+  "homepage": "https://github.com/manishrelani/getx-generator#readme"
 }

@@ -3,6 +3,8 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as changeCase from 'string-ts';
 import * as vscode from 'vscode';
+import { wrapWithObx, wrapWithObxBuilder } from "./commands/widget_wrapper";
+import { WrapWithActionProvider } from "./utils/provider";
 
 export function activate(context: vscode.ExtensionContext) {
 	console.log('Folder Generator Extension is now active!');
@@ -25,7 +27,24 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 	);
 
-	context.subscriptions.push(generateBCVCommand);
+
+
+	const wrapObxBuilderCommand = vscode.commands.registerCommand("extension.wrap-obx-builder", wrapWithObxBuilder);
+	const wrapObxCommand = vscode.commands.registerCommand("extension.wrap-obx", wrapWithObx);
+
+	const wrapActionProvider = vscode.languages.registerCodeActionsProvider(
+		{ language: 'dart', scheme: 'file' },
+		new WrapWithActionProvider()
+	);
+
+
+	context.subscriptions.push(
+		generateBCVCommand,
+		wrapObxBuilderCommand,
+		wrapObxCommand,
+		wrapActionProvider,
+	);
+
 }
 
 async function promptForClassName(): Promise<string | undefined> {
