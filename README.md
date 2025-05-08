@@ -1,8 +1,8 @@
 # 🚀 GetX Generator
 
-![VS Code Version](https://img.shields.io/visual-studio-marketplace/v/your-publisher-name.getxgenerator)
-![Downloads](https://img.shields.io/visual-studio-marketplace/d/your-publisher-name.getxgenerator)
-![License](https://img.shields.io/github/license/yourusername/getxgenerator)
+![VS Code Version](https://img.shields.io/visual-studio-marketplace/v/ManishRelani.getxgenerator)
+<!-- ![Downloads](https://img.shields.io/visual-studio-marketplace/d/ManishRelani.getxgenerator) -->
+<!-- ![License](https://img.shields.io/github/license/ManishRelani/getxgenerator) -->
 
 A simple VS Code extension that scaffolds **Binding–Controller–View (BCV)** structure for your Flutter projects using the [GetX](https://pub.dev/packages/get) package.
 
