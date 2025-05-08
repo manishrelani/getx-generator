@@ -1,9 +1,9 @@
 {
   "name": "getxgenerator",
-  "displayName": "GetX Generator",
+  "displayName": "GetX Widget Generator",
   "description": "Quickly generate a GetX Binding, Controller, and View file structure for Flutter development.",
-  "version": "0.0.1",
-  "publisher": "Manish Relani",
+  "version": "0.0.2",
+  "publisher": "ManishRelani",
   "engines": {
     "vscode": "^1.99.0"
   },
@@ -77,6 +77,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "@vscode/vsce": "^3.3.2",
     "accepts": "^2.0.0",
     "acorn": "^8.14.1",
     "acorn-jsx": "^5.3.2",
