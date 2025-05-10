@@ -35,6 +35,10 @@
       {
         "command": "extension.wrap-obx",
         "title": "Wrap with Obx"
+      },
+      {
+        "command": "extension.wrap-get-builder",
+        "title": "Wrap with GetBuilder"
       }
     ],
     "menus": {
@@ -52,6 +56,10 @@
         },
         {
           "command": "extension.wrap-obx",
+          "when": "editorLangId == dart"
+        },
+        {
+          "command": "extension.wrap-get-builder",
           "when": "editorLangId == dart"
         }
       ]

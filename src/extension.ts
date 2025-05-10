@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as changeCase from 'string-ts';
 import * as vscode from 'vscode';
-import { wrapWithObx, wrapWithObxBuilder } from "./commands/widget_wrapper";
+import * as widgetWrapper from "./commands/widget_wrapper";
 import { WrapWithActionProvider } from "./utils/provider";
 
 export function activate(context: vscode.ExtensionContext) {
@@ -29,8 +29,9 @@ export function activate(context: vscode.ExtensionContext) {
 
 
 
-	const wrapObxBuilderCommand = vscode.commands.registerCommand("extension.wrap-obx-builder", wrapWithObxBuilder);
-	const wrapObxCommand = vscode.commands.registerCommand("extension.wrap-obx", wrapWithObx);
+	const wrapObxBuilderCommand = vscode.commands.registerCommand("extension.wrap-obx-builder", widgetWrapper.wrapWithObxBuilder);
+	const wrapObxCommand = vscode.commands.registerCommand("extension.wrap-obx", widgetWrapper.wrapWithObx);
+	const wrapGetBuilderCommand = vscode.commands.registerCommand("extension.wrap-get-builder", widgetWrapper.wrapWithGetBuilder);
 
 	const wrapActionProvider = vscode.languages.registerCodeActionsProvider(
 		{ language: 'dart', scheme: 'file' },
@@ -42,6 +43,7 @@ export function activate(context: vscode.ExtensionContext) {
 		generateBCVCommand,
 		wrapObxBuilderCommand,
 		wrapObxCommand,
+		wrapGetBuilderCommand,
 		wrapActionProvider,
 	);
 

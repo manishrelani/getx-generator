@@ -17,6 +17,10 @@ export class WrapWithActionProvider implements CodeActionProvider {
             {
                 command: "extension.wrap-obx",
                 title: "Wrap with Obx",
+            },
+            {
+                command: "extension.wrap-get-builder",
+                title: "Wrap with GetBuilder",
             }
 
         ].map((c) => {
