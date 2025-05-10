@@ -114,6 +114,7 @@ import 'package:flutter/material.dart';
 import '../controller/${className.toLowerCase()}_controller.dart';
 
 class ${pascalCase}Screen extends GetView<${pascalCase}Controller> {
+const ${pascalCase}Screen({super.key});
   @override
   Widget build(BuildContext context) {
     return const Placeholder();
