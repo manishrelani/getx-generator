@@ -15,7 +15,7 @@ export function activate(context: vscode.ExtensionContext) {
 	);
 
 	const generateFeatureCommand = vscode.commands.registerCommand(
-		'extension.generateFeature',
+		'extension.genereteFeatureFolder',
 		generateFeatureStructure);
 
 
