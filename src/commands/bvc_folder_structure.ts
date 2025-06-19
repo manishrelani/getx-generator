@@ -113,16 +113,16 @@ async function generateControllerFile(dir: string, className: string) {
     const pascalCase = changeCase.pascalCase(className);
 
     const content = `
-		import 'package:get/get.dart';
+import 'package:get/get.dart';
 
-		class $ { pascalCase }Binding extends Bindings {
+		class ${pascalCase}Binding extends Bindings {
 			@override
 			void dependencies() {
 				Get.put(${pascalCase}Controller());
 			}
 		}
 
-		class $ { pascalCase }Controller extends GetxController { }
+		class ${pascalCase}Controller extends GetxController { }
 		`;
 
     const filePath = path.join(dir, `${snakeCase} _controller.dart`);
@@ -134,12 +134,11 @@ async function generateViewFile(dir: string, className: string) {
     const pascalCase = changeCase.pascalCase(className);
 
     const content = `
-		import 'package:get/get.dart';
-		import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:flutter/material.dart';
+import '../controller/${className.toLowerCase()}_controller.dart';
 
-		import '../controller/${className.toLowerCase()}_controller.dart';
-
-		class $ { pascalCase }Screen extends GetView < ${pascalCase} Controller > {
+		class ${pascalCase}Screen extends GetView <${pascalCase}Controller> {
 			const ${pascalCase} Screen({ super.key });
 		@override
   Widget build(BuildContext context) {
