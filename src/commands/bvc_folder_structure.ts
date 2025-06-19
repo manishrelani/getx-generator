@@ -125,7 +125,7 @@ import 'package:get/get.dart';
 		class ${pascalCase}Controller extends GetxController { }
 		`;
 
-    const filePath = path.join(dir, `${snakeCase} _controller.dart`);
+    const filePath = path.join(dir, `${snakeCase}_controller.dart`);
     fs.writeFileSync(filePath, content.trim());
 }
 
@@ -147,6 +147,6 @@ const ${pascalCase} Screen({super.key});
 }
 	`;
 
-    const filePath = path.join(dir, `${snakeCase} _screen.dart`);
+    const filePath = path.join(dir, `${snakeCase}_screen.dart`);
     fs.writeFileSync(filePath, content.trim());
 }
